@@ -1,0 +1,21 @@
+#go-button, #ui{
+    display: inline-block;
+    vertical-align: top;
+}
+
+#button-container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+button{
+    margin: 10px;
+}
+
+label{
+    display: block;
+}
