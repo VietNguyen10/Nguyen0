@@ -3,7 +3,7 @@ window.umessage = user_message;
 class Game 
 { 
     // Singleton pattern
-    // Implementation reference: https://itnext.io/7-ways-to-create-singleton-in-javascript-db95a75fbb76
+    // ----------------Implementation reference: https://itnext.io/7-ways-to-create-singleton-in-javascript-db95a75fbb76 ----------------- //
     static game = null;    
     constructor () {
         this.buttonList = [];
@@ -18,6 +18,7 @@ class Game
 
         return this.game;
     }
+    // ------------------------------------------------------------------------------------------------------------------------------------ //
 
     
     //Make a list of button
@@ -26,7 +27,10 @@ class Game
             window.alert(umessage.ALERT_MESSAGE);
         } else {
             for(let i = 0; i < n; i++) {
-                let randomColor = Math.floor(Math.random()*16777215).toString(16); // online reference: https://css-tricks.com/snippets/javascript/random-hex-color/
+                // ---------------------------online reference: https://css-tricks.com/snippets/javascript/random-hex-color/---------------------------- //
+                let randomColor = Math.floor(Math.random()*16777215).toString(16); 
+                // ------------------------------------------------------- //
+
                 this.buttonList[i] = new Button(("#" + randomColor), "10em", "5em", "auto", "auto", i+1);
             }
         }
@@ -41,8 +45,8 @@ class Game
 
         await this.sleep(1000*(num-2));
 
-        // Implementation reference: chatGPT
-        const intervalId = setInterval(() => {
+    // ------------Implementation referece: chatGPT----------- //
+    const intervalId = setInterval(() => {
             for (let j = 0; j < this.buttonList.length; j++) {
                 this.buttonList[j].moveRandom();
             }
@@ -58,15 +62,19 @@ class Game
                 }
             }
         }, 2000);
+    // ------------------------------------------------------- //
     }
         
     getOrderFromUser(button) {
         this.result.push(button.getOrder());
     }
-
-    sleep(ms) {
+    
+    // ------------Implementation referece: chatGPT----------- //
+        sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
+    // ------------------------------------------------------- //
+
 
     checkResult() {
         for(let i = 0; i < this.result.length; i++) {
@@ -89,7 +97,7 @@ class Game
         let currentGuess = 0; // Counter to keep track of the user's current guess
 
         // Add click handlers for each button
-        // Implementation referece: chatGPT
+        // --------Implementation referece: chatGPT--------------- //
         for (let i = 0; i < this.buttonList.length; i++) {
             this.buttonList[i].btn.addEventListener('click', () => {
                 this.getOrderFromUser(this.buttonList[i]);
@@ -115,6 +123,7 @@ class Game
                 }
             });
         }
+        // ------------------------------------------------------- //
     }
 }
 

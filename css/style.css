@@ -1,3 +1,4 @@
+/* Reference: W3School */
 #go-button, #ui{
     display: inline-block;
     vertical-align: top;
@@ -19,3 +20,4 @@ button{
 label{
     display: block;
 }
+

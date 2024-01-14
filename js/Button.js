@@ -11,12 +11,12 @@ class Button {
 
         document.getElementById("button-container").appendChild(this.btn);
 
-        // Button click event handler for toggle text visibility
         this.btn.addEventListener('click', () => {
             this.buttonTextToggle();
         });
     }
 
+    // ----------------Implementation reference: ChatGPT ----------------- //
     moveRandom(){
         const containerWidth = document.getElementById("button-container").offsetWidth;
         const containerHeight = document.getElementById("button-container").offsetHeight;
@@ -29,6 +29,7 @@ class Button {
             Math.floor(Math.random() * (containerWidth - 50))
         )
     }
+    // ------------------------------------------------------------------- //
 
     setLocation(top, left) {
         this.btn.style.top = top + "px";
