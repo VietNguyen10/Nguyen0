@@ -80,9 +80,11 @@ class Game
     resetGame() {
         this.buttonList.length = 0;
         this.result.length = 0;
+        document.getElementById("go-button").disabled = false;
     }
 
     startGame() {
+        document.getElementById("go-button").disabled = true;
         this.setUp();
         let currentGuess = 0; // Counter to keep track of the user's current guess
 
